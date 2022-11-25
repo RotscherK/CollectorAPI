@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+app.use(express.bodyParser());
+app.use(app.router);
+
+
 const CyclicDb = require("cyclic-dynamodb")
 const db = CyclicDb("amused-gold-donkeyCyclicDB")
 
