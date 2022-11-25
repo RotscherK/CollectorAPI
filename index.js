@@ -30,6 +30,7 @@ app.all('/', (req, res) => {
     res.send('Yo!')
 })
 app.post('/searchItemMatches', async (req, res, next) => {
+    console.log(req)
     const searchItemID = req.query.searchItemID;
     console.log("SearchItem ID ", searchItemID)
 
