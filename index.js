@@ -19,7 +19,7 @@ app.all('/init', async(req, res) => {
 
 app.all('/showAll', async(req, res) => {
     console.log("Just got a request!")
-    matches = await searchMatches.get()
+    matches = await db.get("searchMatches")
     const jsonContent = JSON.stringify(matches);
     res.send(jsonContent)
 })
