@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
+    "cyclic-dynamodb": "^0.0.27",
     "express": "^4.17.1"
   }
 }
