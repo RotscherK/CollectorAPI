@@ -9,9 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(app.router);
-
-
 const CyclicDb = require("cyclic-dynamodb")
 const db = CyclicDb("amused-gold-donkeyCyclicDB")
 
