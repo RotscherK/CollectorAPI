@@ -38,9 +38,8 @@ app.all('/', (req, res) => {
     res.send('Yo!')
 })
 app.post('/searchItemMatches', async (req, res, next) => {
-    console.log(req.query)
-    console.log(req.body)
-    const searchItemID = req.query.searchItemID;
+ 
+    const searchItemID = req.body.searchItemID;
     console.log("SearchItem ID ", searchItemID)
 
     matches = await searchMatches.get(searchItemID)
