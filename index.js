@@ -45,7 +45,7 @@ app.post('/searchItemMatches', async (req, res, next) => {
     matchesCollection = await searchMatches.get(searchItemID)
     matches = []
     Object.keys(matchesCollection.props).forEach(key => {
-        console.log(key, obj[key]);
+        console.log(key, matchesCollection.props[key]);
         matches.append(matchesCollection.props[key])
 
       });
