@@ -44,11 +44,14 @@ app.post('/searchItemMatches', async (req, res, next) => {
 
     matchesCollection = await searchMatches.get(searchItemID)
     matches = []
-    Object.keys(matchesCollection.props).forEach(key => {
-        console.log(key, matchesCollection.props[key]);
-        matches.push(matchesCollection.props[key])
+    
+    if(matchesCollection.props != null){
+         Object.keys(matchesCollection.props).forEach(key => {
+             console.log(key, matchesCollection.props[key]);
+             matches.push(matchesCollection.props[key])
 
-      });
+          });
+    }
 
     console.log("SearchItem matches ", matches)
 
