@@ -1,7 +1,16 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 const app = express()
 
-app.use(express.bodyParser());
+var bodyParser = require('body-parser');
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 app.use(app.router);
 
 
@@ -35,6 +44,7 @@ app.all('/', (req, res) => {
 })
 app.post('/searchItemMatches', async (req, res, next) => {
     console.log(req.query)
+    console.log(req.body)
     const searchItemID = req.query.searchItemID;
     console.log("SearchItem ID ", searchItemID)
 
