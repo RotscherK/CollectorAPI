@@ -36,6 +36,12 @@ app.all('/showAll', async(req, res) => {
     res.send(jsonContent)
 })
 
+app.all('/deleteAll', async(req, res) => {
+    await searchMatches.delete("123")
+    res.send("deletedAll")
+}
+
+
 
 app.all('/', (req, res) => {
     console.log("Just got a request!")
