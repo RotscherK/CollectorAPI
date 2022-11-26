@@ -47,8 +47,12 @@ app.post('/searchItemMatches', async (req, res, next) => {
     
     if(matchesCollection != null){
          Object.keys(matchesCollection.props).forEach(key => {
-             console.log(key, matchesCollection.props[key]);
-             matches.push(matchesCollection.props[key])
+            if(matchesCollection.props[key].hasOwnProperty('id')){
+
+                console.log(key, matchesCollection.props[key]);
+                matches.push(matchesCollection.props[key])
+                
+            }
 
           });
     }
