@@ -39,7 +39,7 @@ app.all('/showAll', async(req, res) => {
 app.all('/deleteAll', async(req, res) => {
     await searchMatches.delete("123")
     res.send("deletedAll")
-}
+})
 
 
 
